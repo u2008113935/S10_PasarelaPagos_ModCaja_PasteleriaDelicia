@@ -1,0 +1,40 @@
+/* Mismo sistema visual que login.css — solo cambia el contenido del formulario */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --crema:#FFF8F3; --crema-oscura:#FBEFE3; --texto:#5B4759; --texto-suave:#8B7887;
+  --rosa:#F6C6D9; --rosa-fuerte:#E88AAE; --menta:#B9E4D0; --lavanda:#D9CDF0;
+  --durazno:#FBD9BB; --amarillo:#FBEFAE; --celeste:#C6E2F5; --blanco:#FFFFFF;
+  --fuente-titulo:'Fraunces', Georgia, serif; --fuente-texto:'Work Sans', system-ui, sans-serif;
+  --radio:10px; --sombra:0 10px 30px rgba(91,71,89,.14); --transicion:220ms cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;}
+body{margin:0; font-family:var(--fuente-texto); color:var(--texto); background:var(--crema); line-height:1.6;}
+h1,h2,h3{font-family:var(--fuente-titulo); font-weight:600; margin:0 0 .5em;}
+.contenedor{width:min(1160px,92%); margin-inline:auto;}
+
+.encabezado{position:sticky; top:0; z-index:50; background:rgba(255,248,243,.95); backdrop-filter:blur(6px); transition:box-shadow var(--transicion);}
+.encabezado.con-scroll{box-shadow:0 2px 14px rgba(91,71,89,.1);}
+.barra-nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0; flex-wrap:wrap; gap:12px;}
+.marca{font-family:var(--fuente-titulo); font-size:1.3rem; font-weight:700; text-decoration:none; color:var(--texto);}
+.marca span{color:var(--rosa-fuerte);}
+
+.boton{display:inline-block; font-weight:600; padding:12px 26px; border-radius:999px; border:2px solid var(--rosa-fuerte); cursor:pointer; background:var(--rosa-fuerte); color:#fff; transition:transform var(--transicion), background var(--transicion), box-shadow var(--transicion);}
+.boton:hover{transform:translateY(-2px); background:#D9678F; box-shadow:var(--sombra);}
+
+.panel-formulario{max-width:460px; margin:64px auto; background:var(--blanco); border:1px solid var(--crema-oscura); border-radius:var(--radio); padding:36px; box-shadow:var(--sombra);}
+.formulario{display:flex; flex-direction:column; gap:18px;}
+.campo label{display:block; font-size:.88rem; font-weight:600; margin-bottom:6px; color:var(--texto-suave);}
+.campo input{width:100%; font-size:1rem; padding:11px 12px; border:1.5px solid var(--crema-oscura); border-radius:8px; background:var(--crema); color:var(--texto); transition:border-color var(--transicion), box-shadow var(--transicion);}
+.campo input:focus{outline:none; border-color:var(--rosa-fuerte); box-shadow:0 0 0 3px rgba(232,138,174,.18);}
+.campo .error{display:block; min-height:18px; color:var(--rosa-fuerte); font-size:.82rem; margin-top:4px;}
+
+.mensaje-estado{margin-top:16px; padding:12px 14px; border-radius:8px; font-size:.92rem; display:none;}
+.mensaje-estado.visible{display:block;}
+.mensaje-estado.exito{background:#E4F5EC; color:#2C6E4F; border:1px solid var(--menta);}
+.mensaje-estado.fallo{background:#FCE6EE; color:#9E3B5F; border:1px solid var(--rosa-fuerte);}
+
+.enlace-secundario{display:block; text-align:center; margin-top:18px; font-size:.9rem; color:var(--texto-suave);}
+.enlace-secundario a{color:var(--rosa-fuerte); font-weight:600;}
+
+.pie{padding:36px 0; text-align:center; color:var(--texto-suave); font-size:.88rem;}

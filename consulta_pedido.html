@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis pedidos — Pastelería Delicia</title>
+<link rel="stylesheet" href="css/consulta_pedido.css">
+</head>
+<body>
+
+<header class="encabezado" id="encabezado">
+  <div class="contenedor barra-nav">
+    <a href="index.html" class="marca">Pastelería <span>Delicia</span></a>
+    <ul class="nav-links"><li><a href="registro_pedido.html">Nuevo pedido</a></li></ul>
+    <button class="boton" id="boton-salir" type="button">Cerrar sesión</button>
+  </div>
+</header>
+
+<main class="seccion-consulta">
+  <div class="contenedor">
+    <h1>Mis pedidos</h1>
+    <table class="tabla-pedidos">
+      <thead>
+        <tr>
+          <th>Código</th><th>Producto</th><th>Tamaño</th><th>Sabor</th><th>Entrega</th><th>Estado</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla-pedidos"></tbody>
+    </table>
+    <p id="sin-pedidos">Todavía no tienes pedidos registrados.</p>
+    <div class="mensaje-estado" id="mensaje-consulta"></div>
+  </div>
+</main>
+
+<footer class="pie"><div class="contenedor"><p>Pastelería Delicia · Huancayo, Perú · Ejemplo con fines didácticos.</p></div></footer>
+
+<script type="module" src="js/consulta/consulta_pedido.js"></script>
+</body>
+</html>

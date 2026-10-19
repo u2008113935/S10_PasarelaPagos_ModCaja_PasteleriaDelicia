@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delicia — Pastelería y Panadería artesanal</title>
+<meta name="description" content="Pastelería y Panadería Delicia, en Huancayo: tortas, cupcakes, pan de masa madre y pedidos personalizados.">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header class="encabezado" id="encabezado">
+  <div class="contenedor barra-nav">
+    <div class="nav-izquierda">
+      <a href="index.html" class="marca">Pastelería <span>Delicia</span></a>
+      <ul class="nav-links">
+        <li><a href="carta.html">Nuestra carta</a></li>
+      </ul>
+    </div>
+
+    <div class="acciones-derecha">
+      <form class="buscador" id="formulario-busqueda">
+        <input type="text" id="campo-busqueda-home" placeholder="¿Qué buscas?" autocomplete="off">
+        <button type="submit" class="buscador-icono" aria-label="Buscar"></button>
+      </form>
+      <a href="login.html" class="boton">Iniciar sesión</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== Slider de héroe (rota solo, con controles) ===== -->
+  <section class="slider" id="slider" aria-label="Destacados">
+    <div class="slider-pista" id="slider-pista">
+      <article class="slide slide-cumple">
+        <div class="slide-texto">
+          <p class="ojo">Colección cumpleaños</p>
+          <h1>Tortas hechas a mano, con el sabor de siempre.</h1>
+          <p>Bizcocho a elección, relleno y decoración personalizada — lista para tu mesa, no solo para la foto.</p>
+          <a href="pedido.html" class="boton boton-relleno">Pedir mi torta</a>
+        </div>
+      </article>
+      <article class="slide slide-cajas">
+        <div class="slide-texto">
+          <p class="ojo">Cofre de la felicidad</p>
+          <h1>Cajas de regalo listas para alegrar a alguien hoy.</h1>
+          <p>Una selección de nuestros dulces favoritos, armada y decorada para regalar.</p>
+          <a href="carta.html?categoria=cajas" class="boton boton-relleno">Ver cajas</a>
+        </div>
+      </article>
+      <article class="slide slide-pan">
+        <div class="slide-texto">
+          <p class="ojo">Todos los días, desde las 5 a.m.</p>
+          <h1>Pan de masa madre, horneado fresco cada mañana.</h1>
+          <p>Fermentación lenta e ingredientes reales, para tu mesa de todos los días.</p>
+          <a href="carta.html?categoria=pan" class="boton boton-relleno">Ver la carta</a>
+        </div>
+      </article>
+    </div>
+
+    <button class="slider-flecha anterior" id="slider-anterior" aria-label="Anterior">‹</button>
+    <button class="slider-flecha siguiente" id="slider-siguiente" aria-label="Siguiente">›</button>
+    <div class="slider-puntos" id="slider-puntos"></div>
+  </section>
+
+  <!-- ===== Carrusel de categorías ===== -->
+  <section class="categorias" id="carta">
+    <div class="contenedor">
+      <div class="categorias-encabezado">
+        <h2>Nuestra carta</h2>
+        <div class="categorias-controles">
+          <button class="carrusel-flecha" id="categorias-anterior" aria-label="Ver categorías anteriores">‹</button>
+          <button class="carrusel-flecha" id="categorias-siguiente" aria-label="Ver más categorías">›</button>
+        </div>
+      </div>
+      <div class="categorias-pista" id="categorias-pista">
+        <a href="carta.html?categoria=tortas" class="categoria-chip cat-cumple"><span>Cumpleaños</span></a>
+        <a href="carta.html?categoria=tortas" class="categoria-chip cat-tortas"><span>Tortas</span></a>
+        <a href="carta.html?categoria=cupcakes" class="categoria-chip cat-cupcakes"><span>Cupcakes</span></a>
+        <a href="carta.html?categoria=alfajores" class="categoria-chip cat-alfajores"><span>Alfajores</span></a>
+        <a href="carta.html?categoria=pan" class="categoria-chip cat-pan"><span>Pan artesanal</span></a>
+        <a href="carta.html?categoria=cajas" class="categoria-chip cat-cajas"><span>Boxes regalo</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie-mapa">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <p class="pie-marca">Pastelería <span>Delicia</span></p>
+      <p>En tu casa o en la nuestra, siempre horneado el mismo día. Gracias por preferirnos.</p>
+    </div>
+    <div class="pie-col">
+      <h4>Mapa del sitio</h4>
+      <a href="carta.html">Nuestra carta</a>
+      <a href="login.html">Iniciar sesión</a>
+    </div>
+    <div class="pie-col">
+      <h4>Categorías</h4>
+      <a href="carta.html?categoria=tortas">Tortas</a>
+      <a href="carta.html?categoria=cupcakes">Cupcakes</a>
+      <a href="carta.html?categoria=alfajores">Alfajores</a>
+      <a href="carta.html?categoria=pan">Pan artesanal</a>
+    </div>
+    <div class="pie-col">
+      <h4>Atención al cliente</h4>
+      <p>Huancayo, Perú</p>
+      <p>Ejemplo con fines didácticos.</p>
+    </div>
+  </div>
+  <p class="pie-copy">Pastelería Delicia © 2026 — material de referencia para la clase de Diseño Web.</p>
+</footer>
+
+<script type="module" src="js/index.js"></script>
+</body>
+</html>

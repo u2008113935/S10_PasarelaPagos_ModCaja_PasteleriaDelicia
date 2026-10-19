@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de administrador — Pastelería Delicia</title>
+<link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+
+<header class="encabezado" id="encabezado">
+  <div class="contenedor barra-nav">
+    <a href="index.html" class="marca">Pastelería <span>Delicia</span></a>
+    <span class="etiqueta-rol" id="etiqueta-rol"></span>
+    <button class="boton" id="boton-salir" type="button">Cerrar sesión</button>
+  </div>
+</header>
+
+<main class="seccion-panel">
+  <div class="contenedor">
+    <h1>Todos los pedidos</h1>
+
+    <details class="panel-crear">
+      <summary>+ Crear pedido nuevo (atención presencial)</summary>
+      <form class="formulario-crear" id="formulario-crear">
+        <input type="text" id="c-nombre" placeholder="Nombre del cliente" required>
+        <input type="tel" id="c-telefono" placeholder="Teléfono" pattern="[0-9]{9}" required>
+        <select id="c-tipo" required>
+          <option value="torta">Torta</option>
+          <option value="cupcakes">Cupcakes</option>
+          <option value="pan">Pan artesanal</option>
+          <option value="alfajores">Alfajores</option>
+        </select>
+        <input type="text" id="c-sabor" placeholder="Sabor" required>
+        <input type="date" id="c-fecha" required>
+        <button type="submit" class="boton boton-relleno">Registrar</button>
+      </form>
+    </details>
+
+    <details class="panel-crear">
+      <summary>+ Crear empleado nuevo</summary>
+      <form class="formulario-crear" id="formulario-crear-empleado">
+        <input type="text" id="e-nombre" placeholder="Nombre del empleado" required>
+        <input type="email" id="e-correo" placeholder="Correo" required>
+        <input type="password" id="e-contrasena" placeholder="Contraseña" minlength="4" required>
+        <button type="submit" class="boton boton-relleno">Crear empleado</button>
+      </form>
+    </details>
+
+    <table class="tabla-panel">
+      <thead>
+        <tr>
+          <th>ID</th><th>Cliente</th><th>Producto</th><th>Sabor</th><th>Entrega</th><th>Estado</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla"></tbody>
+    </table>
+
+    <div class="mensaje-estado" id="mensaje-panel"></div>
+  </div>
+</main>
+
+<div class="modal" id="modal-editar">
+  <div class="modal-caja">
+    <h3>Editar pedido #<span id="modal-id"></span></h3>
+    <label>Sabor</label>
+    <input type="text" id="modal-sabor">
+    <label>Estado</label>
+    <select id="modal-estado">
+      <option value="registrado">registrado</option>
+      <option value="en_preparacion">en_preparacion</option>
+      <option value="atendido">atendido</option>
+      <option value="cancelado">cancelado</option>
+    </select>
+    <div class="modal-acciones">
+      <button class="boton" id="modal-cancelar" type="button">Cancelar</button>
+      <button class="boton boton-relleno" id="modal-guardar" type="button">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<footer class="pie"><div class="contenedor"><p>Pastelería Delicia · Huancayo, Perú · Ejemplo con fines didácticos.</p></div></footer>
+
+<script type="module" src="js/paneladmin.js"></script>
+</body>
+</html>

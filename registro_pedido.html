@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido personalizado — Pastelería Delicia</title>
+<link rel="stylesheet" href="css/registro_pedido.css">
+</head>
+<body>
+
+<header class="encabezado" id="encabezado">
+  <div class="contenedor barra-nav">
+    <a href="index.html" class="marca">Pastelería <span>Delicia</span></a>
+    <ul class="nav-links"><li><a href="consulta_pedido.html">Mis pedidos</a></li></ul>
+    <button class="boton" id="boton-salir" type="button">Cerrar sesión</button>
+  </div>
+</header>
+
+<main>
+  <div class="contenedor">
+    <div class="panel-formulario">
+      <h2>Pedido personalizado</h2>
+
+      <form class="formulario" id="formulario-pedido" novalidate>
+        <div class="campo">
+          <label for="nombre-cliente">Nombre completo</label>
+          <input type="text" id="nombre-cliente" name="nombreCliente" required>
+          <span class="error" id="error-nombre-cliente"></span>
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono (9 dígitos)</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+          <span class="error" id="error-telefono"></span>
+        </div>
+        <div class="campo">
+          <label for="tipo-producto">Tipo de producto</label>
+          <select id="tipo-producto" name="tipoProducto" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="torta">Torta de cumpleaños</option>
+            <option value="cupcakes">Cupcakes por docena</option>
+            <option value="pan">Pan artesanal por encargo</option>
+            <option value="alfajores">Alfajores por caja</option>
+          </select>
+          <span class="error" id="error-tipo-producto"></span>
+        </div>
+        <div class="campo">
+          <label for="tamano">Tamaño / cantidad</label>
+          <select id="tamano" name="tamano" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="pequeno">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+          </select>
+          <span class="error" id="error-tamano"></span>
+        </div>
+        <div class="campo">
+          <label for="sabor">Sabor</label>
+          <input type="text" id="sabor" name="sabor" placeholder="Ej. chocolate, vainilla" required>
+          <span class="error" id="error-sabor"></span>
+        </div>
+        <div class="campo">
+          <label for="mensaje-torta">Mensaje para decorar (opcional)</label>
+          <textarea id="mensaje-torta" name="mensajeTorta" maxlength="150"></textarea>
+        </div>
+        <div class="campo">
+          <label for="fecha-entrega">Fecha de entrega</label>
+          <input type="date" id="fecha-entrega" name="fechaEntrega" required>
+          <span class="error" id="error-fecha-entrega"></span>
+        </div>
+
+        <button type="submit" class="boton boton-relleno">Confirmar pedido</button>
+        <div class="mensaje-estado" id="mensaje-pedido"></div>
+        <div class="sello-confirmacion" id="sello-confirmacion"></div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="pie"><div class="contenedor"><p>Pastelería Delicia · Huancayo, Perú · Ejemplo con fines didácticos.</p></div></footer>
+
+<script type="module" src="js/registro_pedido.js"></script>
+</body>
+</html>

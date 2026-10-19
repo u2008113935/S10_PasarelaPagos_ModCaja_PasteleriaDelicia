@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --crema:        #FFF8F3;
+  --crema-oscura: #FBEFE3;
+  --texto:        #5B4759;
+  --texto-suave:  #8B7887;
+  --rosa:         #F6C6D9;
+  --rosa-fuerte:  #E88AAE;
+  --menta:        #B9E4D0;
+  --lavanda:      #D9CDF0;
+  --durazno:      #FBD9BB;
+  --amarillo:     #FBEFAE;
+  --celeste:      #C6E2F5;
+  --blanco:       #FFFFFF;
+
+  --fuente-titulo:'Fraunces', Georgia, serif;
+  --fuente-texto:'Work Sans', system-ui, sans-serif;
+  --radio:10px;
+  --sombra:0 10px 30px rgba(91,71,89,.14);
+  --transicion:220ms cubic-bezier(.4,0,.2,1);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; font-family:var(--fuente-texto); color:var(--texto); background:var(--crema); line-height:1.6;}
+h1,h2,h3{font-family:var(--fuente-titulo); font-weight:600; margin:0 0 .5em;}
+.contenedor{width:min(1160px,92%); margin-inline:auto;}
+
+/* ---------- Encabezado ---------- */
+.encabezado{position:sticky; top:0; z-index:50; background:rgba(255,248,243,.92); backdrop-filter:blur(6px); transition:box-shadow var(--transicion);}
+.encabezado.con-scroll{box-shadow:0 2px 14px rgba(91,71,89,.10);}
+.barra-nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0; flex-wrap:wrap; gap:14px;}
+
+.nav-izquierda{display:flex; align-items:center; gap:32px; flex-wrap:wrap;}
+.marca{font-family:var(--fuente-titulo); font-size:1.3rem; font-weight:700; text-decoration:none; color:var(--texto);}
+.marca span{color:var(--rosa-fuerte);}
+.nav-links{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+.nav-links a{text-decoration:none; font-weight:500; color:var(--texto); border-bottom:2px solid transparent; transition:border-color var(--transicion);}
+.nav-links a:hover{border-color:var(--rosa-fuerte);}
+
+.acciones-derecha{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+
+/* Buscador con ícono de lupa hecho en CSS puro (sin emoji) */
+.buscador{display:flex; align-items:center; gap:6px; background:var(--blanco); border:1.5px solid var(--crema-oscura); border-radius:999px; padding:6px 6px 6px 16px; transition:border-color var(--transicion), box-shadow var(--transicion);}
+.buscador:focus-within{border-color:var(--rosa-fuerte); box-shadow:0 0 0 3px rgba(232,138,174,.18);}
+.buscador input{border:none; background:none; font-size:.92rem; color:var(--texto); outline:none; font-family:var(--fuente-texto); width:170px;}
+.buscador input::placeholder{color:var(--texto-suave);}
+.buscador-icono{border:none; background:var(--crema-oscura); width:32px; height:32px; border-radius:50%; cursor:pointer; position:relative; transition:background var(--transicion);}
+.buscador-icono:hover{background:var(--rosa);}
+.buscador-icono::before{content:""; position:absolute; top:8px; left:8px; width:10px; height:10px; border:2px solid var(--texto); border-radius:50%;}
+.buscador-icono::after{content:""; position:absolute; bottom:8px; right:8px; width:2px; height:7px; background:var(--texto); border-radius:2px; transform:rotate(45deg);}
+
+.boton{display:inline-block; font-weight:600; padding:12px 26px; border-radius:999px; border:2px solid var(--texto); text-decoration:none; cursor:pointer; background:transparent; color:var(--texto); transition:transform var(--transicion), background var(--transicion), box-shadow var(--transicion), color var(--transicion);}
+.boton:hover{transform:translateY(-2px); box-shadow:var(--sombra);}
+.boton-relleno{background:var(--rosa-fuerte); border-color:var(--rosa-fuerte); color:#fff;}
+.boton-relleno:hover{background:#D9678F;}
+
+/* ---------- Slider de héroe ---------- */
+.slider{position:relative; overflow:hidden;}
+.slider-pista{display:flex; transition:transform 600ms cubic-bezier(.4,0,.2,1);}
+.slide{flex:0 0 100%; min-height:min(70vh, 560px); display:flex; align-items:center; position:relative;}
+.slide-texto{position:relative; z-index:2; max-width:560px; margin-left:8%;}
+.slide-texto .ojo{color:var(--rosa-fuerte); font-weight:600; margin:0 0 10px;}
+.slide-texto h1{font-size:clamp(2rem,4vw,3rem); color:var(--texto);}
+.slide-texto p{color:var(--texto-suave); font-size:1.05rem; max-width:48ch;}
+.slide-texto .boton{margin-top:18px;}
+
+.slide-cumple{background:radial-gradient(circle at 78% 40%, var(--rosa), var(--crema) 62%);}
+.slide-cajas{background:radial-gradient(circle at 78% 40%, var(--celeste), var(--crema) 62%);}
+.slide-pan{background:radial-gradient(circle at 78% 40%, var(--durazno), var(--crema) 62%);}
+
+.slider-flecha{
+  position:absolute; top:50%; translate:0 -50%; z-index:3;
+  width:44px; height:44px; border-radius:50%; border:none;
+  background:rgba(255,255,255,.85); color:var(--texto); font-size:1.5rem; line-height:1;
+  cursor:pointer; box-shadow:var(--sombra); transition:background var(--transicion), transform var(--transicion);
+}
+.slider-flecha:hover{background:#fff; transform:translateY(-50%) scale(1.06);}
+.slider-flecha.anterior{left:20px;}
+.slider-flecha.siguiente{right:20px;}
+
+.slider-puntos{position:absolute; bottom:20px; left:0; right:0; display:flex; justify-content:center; gap:8px; z-index:3;}
+.slider-puntos button{
+  width:9px; height:9px; border-radius:50%; border:none; background:rgba(91,71,89,.28);
+  cursor:pointer; padding:0; transition:background var(--transicion), transform var(--transicion);
+}
+.slider-puntos button.activo{background:var(--rosa-fuerte); transform:scale(1.25);}
+
+/* ---------- Carrusel de categorías ---------- */
+.categorias{padding:52px 0 72px;}
+.categorias-encabezado{display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;}
+.categorias-controles{display:flex; gap:8px;}
+.carrusel-flecha{
+  width:36px; height:36px; border-radius:50%; border:1px solid var(--crema-oscura);
+  background:var(--blanco); color:var(--texto); font-size:1.2rem; cursor:pointer;
+  transition:background var(--transicion), border-color var(--transicion);
+}
+.carrusel-flecha:hover{background:var(--crema-oscura); border-color:var(--rosa-fuerte);}
+
+.categorias-pista{display:flex; gap:16px; overflow-x:auto; padding-bottom:10px; scroll-behavior:smooth;}
+.categorias-pista::-webkit-scrollbar{height:6px;}
+.categorias-pista::-webkit-scrollbar-thumb{background:var(--crema-oscura); border-radius:6px;}
+
+.categoria-chip{
+  flex:0 0 150px; height:110px; border-radius:var(--radio); position:relative;
+  display:flex; align-items:flex-end; text-decoration:none; overflow:hidden;
+  box-shadow:0 4px 14px rgba(91,71,89,.08); transition:transform var(--transicion), box-shadow var(--transicion);
+}
+.categoria-chip:hover{transform:translateY(-5px); box-shadow:var(--sombra);}
+.categoria-chip span{
+  position:relative; z-index:2; color:var(--texto); font-weight:600; font-size:.92rem;
+  padding:12px; text-shadow:0 1px 2px rgba(255,255,255,.4);
+}
+.categoria-chip::before{content:""; position:absolute; inset:0;}
+.cat-cumple::before{background:linear-gradient(160deg,#FBDCE8,var(--rosa-fuerte));}
+.cat-tortas::before{background:linear-gradient(160deg,#FDE8D3,var(--durazno));}
+.cat-cupcakes::before{background:linear-gradient(160deg,#FDF6D3,var(--amarillo));}
+.cat-alfajores::before{background:linear-gradient(160deg,#EAE1F7,var(--lavanda));}
+.cat-pan::before{background:linear-gradient(160deg,#F5E9D6,#E8CFA0);}
+.cat-cajas::before{background:linear-gradient(160deg,#DCF0E8,var(--menta));}
+
+/* ---------- Pie de página tipo "mapa del sitio" ---------- */
+.pie-mapa{background:var(--texto); color:#F3E8F0; padding:48px 0 20px;}
+.pie-columnas{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:28px;}
+@media (max-width:800px){.pie-columnas{grid-template-columns:1fr 1fr;}}
+.pie-marca{font-family:var(--fuente-titulo); font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:8px;}
+.pie-marca span{color:var(--amarillo);}
+.pie-col p{font-size:.88rem; color:#E3D4E0; margin:0 0 6px;}
+.pie-col h4{color:#fff; font-size:.85rem; text-transform:uppercase; letter-spacing:.04em; margin:0 0 12px;}
+.pie-col a{display:block; color:#E3D4E0; text-decoration:none; font-size:.9rem; margin-bottom:8px; transition:color var(--transicion);}
+.pie-col a:hover{color:#fff;}
+.pie-copy{text-align:center; font-size:.82rem; color:#C9B3C4; margin:36px 0 0;}
+
+@media (max-width:820px){
+  .slide-texto{margin-left:6%; max-width:88%;}
+}

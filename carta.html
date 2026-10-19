@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra carta — Pastelería Delicia</title>
+<link rel="stylesheet" href="css/carta.css">
+</head>
+<body>
+
+<header class="encabezado" id="encabezado">
+  <div class="contenedor barra-nav">
+    <div class="nav-izquierda">
+      <a href="index.html" class="marca">Pastelería <span>Delicia</span></a>
+      <ul class="nav-links">
+        <li><a href="carta.html">Nuestra carta</a></li>
+      </ul>
+    </div>
+    <div class="acciones-derecha">
+      <div class="buscador">
+        <span class="buscador-icono" aria-hidden="true"></span>
+        <input type="text" id="campo-busqueda" placeholder="¿Qué buscas?" autocomplete="off">
+      </div>
+      <a href="login.html" class="boton">Iniciar sesión</a>
+    </div>
+  </div>
+
+  <nav class="tabs-categorias" aria-label="Categorías de productos">
+    <div class="contenedor tabs-pista" id="tabs-pista">
+      <button class="tab activa" data-categoria="tortas">Tortas</button>
+      <button class="tab" data-categoria="cupcakes">Cupcakes</button>
+      <button class="tab" data-categoria="alfajores">Alfajores</button>
+      <button class="tab" data-categoria="pan">Pan artesanal</button>
+      <button class="tab" data-categoria="cajas">Boxes regalo</button>
+    </div>
+  </nav>
+</header>
+
+<main class="seccion-carta">
+  <div class="contenedor">
+    <h1 id="titulo-categoria">Tortas</h1>
+    <p id="subtitulo-categoria">12 porciones — 20 cm de diámetro aprox.</p>
+    <p class="sin-resultados" id="sin-resultados">No encontramos productos con ese nombre.</p>
+
+    <div class="rejilla-productos" id="rejilla-productos">
+
+      <article class="tarjeta-producto" data-categoria="tortas" data-nombre="torta choco fudge">
+        <div class="tp-imagen tp-choco">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Torta de chocolate rellena con fudge casero, cubierta con fudge y frutos rojos.</p>
+          <h3>Torta Choco Fudge</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 89.90</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="tortas" data-nombre="torta vainilla clasica">
+        <div class="tp-imagen tp-vainilla">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Bizcocho de vainilla clásico, relleno de manjar blanco y cubierto con chantilly.</p>
+          <h3>Torta Vainilla Clásica</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 79.90</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="tortas" data-nombre="carrot cake">
+        <div class="tp-imagen tp-carrot">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Esponjoso bizcocho de zanahoria con nueces, cubierto con frosting de queso crema.</p>
+          <h3>Carrot Cake</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 95.00</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="tortas" data-nombre="red velvet">
+        <div class="tp-imagen tp-redvelvet">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Torta de tres capas de suave red velvet, con frosting de queso crema y frutos rojos.</p>
+          <h3>Red Velvet</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 99.00</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="cupcakes" data-nombre="cupcakes surtidos">
+        <div class="tp-imagen tp-cupcakes">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Docena de cupcakes surtidos: vainilla, chocolate y red velvet.</p>
+          <h3>Cupcakes Surtidos</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 72.00</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="alfajores" data-nombre="alfajores">
+        <div class="tp-imagen tp-alfajores">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Caja de 12 alfajores con manjar blanco casero, cubiertos con coco o chocolate.</p>
+          <h3>Caja de Alfajores</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 45.00</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="pan" data-nombre="pan masa madre">
+        <div class="tp-imagen tp-pan">
+          <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+        </div>
+        <div class="tp-cuerpo">
+          <p class="tp-descripcion">Pan de masa madre, fermentación de 18 horas, corteza crocante y miga húmeda.</p>
+          <h3>Pan de Masa Madre</h3>
+          <div class="tp-pie">
+            <span class="tp-precio">S/ 12.00</span>
+            <button class="tp-boton">Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-producto" data-categoria="cajas" data-nombre="box regalo dulce">
+        <div class="tp-imagen tp-cajas">
+          <button
